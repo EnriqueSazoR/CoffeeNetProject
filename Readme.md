@@ -23,10 +23,14 @@ CoffeeNet es una aplicación web diseñada para administrar los procesos de una 
 | Git          |           | Control de versiones           |
 | GitHub       |           | Repositorio remoto             |
 
+---
+
 ## Módulos
 - Login
 - Cliente
 - Administrador
+
+---
 
 ## Equipo de DesasarrolloEquipo de Desarrollo
 
