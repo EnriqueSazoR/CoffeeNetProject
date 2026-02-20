@@ -34,6 +34,3 @@ CoffeeNet es una aplicación web diseñada para administrar los procesos de una 
 |----------------------|----------------|
 | Full Stack Developer | Luis Sazo      |
 | Full Stack Developer | Marco Contreras|
-
-# CoffeeNet Proyecto
-# CoffeeNet-Proyecto
