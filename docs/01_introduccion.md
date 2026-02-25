@@ -45,11 +45,13 @@ El software tiene como finalidad optimizar la toma de pedidos, la gestión de us
 
 
 ## 3. Stakeholders
-|    *Rol*   |             *Descripción*              |                       *Interés Principal*                    |
-| Cliente    | Usuario final que consume los datos    | Rapidez en el pedido y facilidad de uso                      |
-| Admin      | Dueño o encargado de la cafetería      | Control de inventario, recepción de pedidos y estadísiticas  |  
-| Devs       | Estudiantes responsables del proyecto  | Cumplimiento de requisitos y calidad de código               |
 
+| *Rol*   |   *Descripción*           |                   *Interés*                     |
+|---------|---------------------------|-------------------------------------------------|
+| Cliente | Usuario final             | Rapidez y faciliad de uso                       |
+| Admin   | Dueño de la cafetería     | Inventario, recpeción de pedidos y estadísticas |
+| Devs    | Responsables del Proyecto | Cumplimiento y calidad de código                |
 
+---
 ## 4. Versión de Aplicación
 - V.1.0.0

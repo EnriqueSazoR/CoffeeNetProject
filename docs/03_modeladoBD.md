@@ -2,11 +2,13 @@
 ---
 
 ## **2. Stack Tecnológico**
-|   ***Capa***   |      ***Tecnológia***    |           ***Justificación***              |
-|Frontend        |          Angular         |Más robutez para futura escalabilidad       |
-|Backend         |         C# Net Core      |Facilidad para crear APIS                   |
-|Base de Datos   |         SQLServer        |Relacional, ideal para pedidos e inventarios|
-|ORM             |     Entity FramewrokCore | Facilita consultas y migraciones           |
+
+|     *Capa*    |      *Tecnológia*     |        *Justificación*                       |
+|---------------|-----------------------|----------------------------------------------|
+| Frontend      | Angular               | Más robustez para futura escalabiliad        |
+| Backend       | C# Net Core           | Facilidad para API´s                         | 
+| Base de Datos | SQLServer             | Relacional, ideal para pedidos e inventarios |
+| ORM           | Entity FrameworkCore  | Facilita consultas y migraciones             |
 
 ---
 
