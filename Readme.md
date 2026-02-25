@@ -10,6 +10,8 @@ CoffeeNet es una aplicación web diseñada para administrar los procesos de una 
 - Gestión de pedidos
 - Historial de pedidos por cliente
 - Panel administrativo para gestión de productos
+- Control de inventarios
+- Control de proveedores
 ---
 
 ## Tecnologías
@@ -23,10 +25,22 @@ CoffeeNet es una aplicación web diseñada para administrar los procesos de una 
 | Git          |           | Control de versiones           |
 | GitHub       |           | Repositorio remoto             |
 
+---
+
 ## Módulos
 - Login
 - Cliente
 - Administrador
+- Inventarios
+- Proveedores
+
+---
+
+## Modelado de Base de Datos
+<img width="1954" height="1860" alt="BD_CoffeeNet" src="https://github.com/user-attachments/assets/b7860f22-e3ac-4df1-9d0f-07a8fc34e8a2" />
+
+---
+
 
 ## Equipo de DesasarrolloEquipo de Desarrollo
 
@@ -34,6 +48,3 @@ CoffeeNet es una aplicación web diseñada para administrar los procesos de una 
 |----------------------|----------------|
 | Full Stack Developer | Luis Sazo      |
 | Full Stack Developer | Marco Contreras|
-
-# CoffeeNet Proyecto
-# CoffeeNet-Proyecto
