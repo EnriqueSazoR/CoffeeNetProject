@@ -36,11 +36,6 @@ CoffeeNet es una aplicación web diseñada para administrar los procesos de una 
 
 ---
 
-## Modelado de Base de Datos
-<img width="1954" height="1860" alt="BD_CoffeeNet" src="https://github.com/user-attachments/assets/b7860f22-e3ac-4df1-9d0f-07a8fc34e8a2" />
-
----
-
 
 ## Equipo de DesasarrolloEquipo de Desarrollo
 
