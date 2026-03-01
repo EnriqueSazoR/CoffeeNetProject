@@ -12,7 +12,12 @@ namespace BackendCoffeeNet.Data
 
         
         // Colocar todos los modelos creados
+
+        public DbSet<Usuarios> Usuarios {get; set;}
+
         public DbSet<Proveedores> Proveedores {get; set;}
+
+        public DbSet<Categoria_Producto> CategoriaProductos {get; set;}
 
     } 
     
