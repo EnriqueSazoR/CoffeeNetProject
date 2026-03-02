@@ -22,6 +22,9 @@ namespace BackendCoffeeNet.Models
         public bool Estado { get; set; }
 
         public DateTime Fecha_Baja { get; set;} 
+
+        // Propiedad de navegación COLECCIÓN: muestra los pedidos de un usuario
+        public ICollection<Pedidos> Pedidos {get; set; } = new List<Pedidos>();
         
     }
 }

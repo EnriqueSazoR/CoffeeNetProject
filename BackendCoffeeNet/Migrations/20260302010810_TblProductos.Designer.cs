@@ -4,6 +4,7 @@ using BackendCoffeeNet.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackendCoffeeNet.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260302010810_TblProductos")]
+    partial class TblProductos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,74 +50,6 @@ namespace BackendCoffeeNet.Migrations
                     b.HasKey("Id_categoria");
 
                     b.ToTable("CategoriaProductos");
-                });
-
-            modelBuilder.Entity("BackendCoffeeNet.Models.DetallePedidos", b =>
-                {
-                    b.Property<int>("Id_DetallePedido")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_DetallePedido"));
-
-                    b.Property<int>("Cantidad")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Comentario")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Id_Pedido")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id_Producto")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("PrecioUnitario")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Subtotal")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id_DetallePedido");
-
-                    b.HasIndex("Id_Pedido");
-
-                    b.HasIndex("Id_Producto");
-
-                    b.ToTable("DetallePedidos");
-                });
-
-            modelBuilder.Entity("BackendCoffeeNet.Models.Pedidos", b =>
-                {
-                    b.Property<int>("Id_Pedido")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_Pedido"));
-
-                    b.Property<string>("Comentario")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Estado")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("FechaPedido")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Id_Usuario")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("TotalAPagar")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id_Pedido");
-
-                    b.HasIndex("Id_Usuario");
-
-                    b.ToTable("Pedidos");
                 });
 
             modelBuilder.Entity("BackendCoffeeNet.Models.Productos", b =>
@@ -233,36 +168,6 @@ namespace BackendCoffeeNet.Migrations
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("BackendCoffeeNet.Models.DetallePedidos", b =>
-                {
-                    b.HasOne("BackendCoffeeNet.Models.Pedidos", "Pedidos")
-                        .WithMany()
-                        .HasForeignKey("Id_Pedido")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BackendCoffeeNet.Models.Productos", "Productos")
-                        .WithMany()
-                        .HasForeignKey("Id_Producto")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Pedidos");
-
-                    b.Navigation("Productos");
-                });
-
-            modelBuilder.Entity("BackendCoffeeNet.Models.Pedidos", b =>
-                {
-                    b.HasOne("BackendCoffeeNet.Models.Usuarios", "Usuarios")
-                        .WithMany("Pedidos")
-                        .HasForeignKey("Id_Usuario")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Usuarios");
-                });
-
             modelBuilder.Entity("BackendCoffeeNet.Models.Productos", b =>
                 {
                     b.HasOne("BackendCoffeeNet.Models.Categoria_Producto", "Categoria")
@@ -272,11 +177,6 @@ namespace BackendCoffeeNet.Migrations
                         .IsRequired();
 
                     b.Navigation("Categoria");
-                });
-
-            modelBuilder.Entity("BackendCoffeeNet.Models.Usuarios", b =>
-                {
-                    b.Navigation("Pedidos");
                 });
 #pragma warning restore 612, 618
         }

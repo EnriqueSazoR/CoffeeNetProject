@@ -19,6 +19,12 @@ namespace BackendCoffeeNet.Data
 
         public DbSet<Categoria_Producto> CategoriaProductos {get; set;}
 
+        public DbSet<Productos> Productos {get; set;}
+
+        public DbSet<Pedidos> Pedidos {get; set;}
+
+        public DbSet<DetallePedidos> DetallePedidos {get; set;}
+
     } 
     
 }

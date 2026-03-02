@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 
-//MARCO
-var conectionString = builder.Configuration.GetConnectionString("ConexionSQL") ?? throw new InvalidOperationException("Connection string 'ConexionSQL' not found.");
-builder.Services.AddDbContext<ApplicationDBContext>(options =>
-    options.UseSqlServer(conectionString));
+// MARCO
+// var conectionString = builder.Configuration.GetConnectionString("ConexionSQL") ?? throw new InvalidOperationException("Connection string 'ConexionSQL' not found.");
+// builder.Services.AddDbContext<ApplicationDBContext>(options =>
+//     options.UseSqlServer(conectionString));
 
 //LUIS
-// var conectionString2 = builder.Configuration.GetConnectionString("ConexionSQL2") ?? throw new InvalidOperationException("Connection string 'ConexionSQL' not found.");
-// builder.Services.AddDbContext<ApplicationDBContext>(options =>
-//     options.UseSqlServer(conectionString2));
+ var conectionString2 = builder.Configuration.GetConnectionString("ConexionSQL2") ?? throw new InvalidOperationException("Connection string 'ConexionSQL' not found.");
+ builder.Services.AddDbContext<ApplicationDBContext>(options =>
+     options.UseSqlServer(conectionString2));
 
 
 // Add services to the container.
