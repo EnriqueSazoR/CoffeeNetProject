@@ -14,6 +14,8 @@ namespace BackendCoffeeNet.Models
         public string Direccion { get; set; } = string.Empty;
 
         public bool Estado { get; set; }
+
+        public ICollection<Insumos> Insumos { get; set; } = new List<Insumos>();
         
     }
 }

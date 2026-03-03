@@ -85,6 +85,82 @@ namespace BackendCoffeeNet.Migrations
                     b.ToTable("DetallePedidos");
                 });
 
+            modelBuilder.Entity("BackendCoffeeNet.Models.Insumos", b =>
+                {
+                    b.Property<int>("Id_insumos")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_insumos"));
+
+                    b.Property<decimal>("Costo_unitario")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("Estado")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Id_Proveedor")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Stock_actual")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Stock_minimo")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Unidad_medida")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id_insumos");
+
+                    b.HasIndex("Id_Proveedor");
+
+                    b.ToTable("Insumos");
+                });
+
+            modelBuilder.Entity("BackendCoffeeNet.Models.Movimientos_Insumos", b =>
+                {
+                    b.Property<int>("Id_mov_insumos")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_mov_insumos"));
+
+                    b.Property<decimal>("Cantidad")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Id_insumos")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Stock_anterior")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Stock_nuevo")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Tipo_mov")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id_mov_insumos");
+
+                    b.HasIndex("Id_insumos");
+
+                    b.ToTable("Movimientos_Insumos");
+                });
+
             modelBuilder.Entity("BackendCoffeeNet.Models.Pedidos", b =>
                 {
                     b.Property<int>("Id_Pedido")
@@ -191,6 +267,32 @@ namespace BackendCoffeeNet.Migrations
                     b.ToTable("Proveedores");
                 });
 
+            modelBuilder.Entity("BackendCoffeeNet.Models.Recetas", b =>
+                {
+                    b.Property<int>("Id_Receta")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_Receta"));
+
+                    b.Property<decimal>("Cantidad_requerida")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Id_Producto")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id_insumos")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id_Receta");
+
+                    b.HasIndex("Id_Producto");
+
+                    b.HasIndex("Id_insumos");
+
+                    b.ToTable("Recetas");
+                });
+
             modelBuilder.Entity("BackendCoffeeNet.Models.Usuarios", b =>
                 {
                     b.Property<int>("Id_usuario")
@@ -252,6 +354,28 @@ namespace BackendCoffeeNet.Migrations
                     b.Navigation("Productos");
                 });
 
+            modelBuilder.Entity("BackendCoffeeNet.Models.Insumos", b =>
+                {
+                    b.HasOne("BackendCoffeeNet.Models.Proveedores", "Proveedor")
+                        .WithMany("Insumos")
+                        .HasForeignKey("Id_Proveedor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Proveedor");
+                });
+
+            modelBuilder.Entity("BackendCoffeeNet.Models.Movimientos_Insumos", b =>
+                {
+                    b.HasOne("BackendCoffeeNet.Models.Insumos", "Insumos")
+                        .WithMany("Movimientos_Insumos")
+                        .HasForeignKey("Id_insumos")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Insumos");
+                });
+
             modelBuilder.Entity("BackendCoffeeNet.Models.Pedidos", b =>
                 {
                     b.HasOne("BackendCoffeeNet.Models.Usuarios", "Usuarios")
@@ -272,6 +396,42 @@ namespace BackendCoffeeNet.Migrations
                         .IsRequired();
 
                     b.Navigation("Categoria");
+                });
+
+            modelBuilder.Entity("BackendCoffeeNet.Models.Recetas", b =>
+                {
+                    b.HasOne("BackendCoffeeNet.Models.Productos", "Productos")
+                        .WithMany("Recetas")
+                        .HasForeignKey("Id_Producto")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BackendCoffeeNet.Models.Insumos", "Insumos")
+                        .WithMany("Recetas")
+                        .HasForeignKey("Id_insumos")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Insumos");
+
+                    b.Navigation("Productos");
+                });
+
+            modelBuilder.Entity("BackendCoffeeNet.Models.Insumos", b =>
+                {
+                    b.Navigation("Movimientos_Insumos");
+
+                    b.Navigation("Recetas");
+                });
+
+            modelBuilder.Entity("BackendCoffeeNet.Models.Productos", b =>
+                {
+                    b.Navigation("Recetas");
+                });
+
+            modelBuilder.Entity("BackendCoffeeNet.Models.Proveedores", b =>
+                {
+                    b.Navigation("Insumos");
                 });
 
             modelBuilder.Entity("BackendCoffeeNet.Models.Usuarios", b =>

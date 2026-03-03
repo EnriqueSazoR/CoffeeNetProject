@@ -25,6 +25,12 @@ namespace BackendCoffeeNet.Data
 
         public DbSet<DetallePedidos> DetallePedidos {get; set;}
 
+        public DbSet<Insumos> Insumos {get; set;}
+
+        public DbSet<Movimientos_Insumos> Movimientos_Insumos {get; set;}
+
+        public DbSet<Recetas> Recetas {get; set;}
+
     } 
     
 }

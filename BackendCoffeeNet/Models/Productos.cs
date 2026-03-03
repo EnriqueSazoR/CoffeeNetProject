@@ -30,5 +30,7 @@ namespace BackendCoffeeNet.Models
         public bool Estado { get; set; }
 
         public DateTime FechaModificado { get; set; }
+
+        public ICollection<Recetas> Recetas { get; set; } = new List<Recetas>();
     }
 }
