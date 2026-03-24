@@ -1,0 +1,32 @@
+<div class="registro-container">
+    <h2>Crear Cuenta</h2>
+    <p>Regístrate para continuar</p>
+
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Luis" formControlName="nombre">
+        </div>
+
+        <div class="form-group">
+            <label>Apellido</label>
+            <input type="text" placeholder="Sazo" formControlName="apellido">
+        </div>
+
+        <div class="form-group">
+            <label>Correo Electrónico</label>
+            <input type="email" placeholder="tu@gmail.com" formControlName="email">
+        </div>
+
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" placeholder="********" formControlName="password">
+        </div>
+
+        <button type="submit">Registrarse</button>
+
+        <p class="login-text">
+            ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>
+        </p>
+    </form>
+</div>

@@ -21,7 +21,9 @@ namespace BackendCoffeeNet.Models
 
         public string Rol { get; set;} = string.Empty;
 
-        public DateTime Fecha_Registro { get; set;} 
+        public DateTime Fecha_Registro { get; set;}
+
+        public DateTime Fecha_Actualizacion { get; set; }
 
         public bool Estado { get; set; }
 

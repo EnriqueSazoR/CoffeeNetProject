@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { Registro } from './registro/registro';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [Registro],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
