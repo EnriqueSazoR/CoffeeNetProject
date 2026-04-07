@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-image: url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1920');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    background-blend-mode: overlay;
+}
+
+app-root {
+    display: block;
+    min-height: 100vh;
+    background: transparent;
+}

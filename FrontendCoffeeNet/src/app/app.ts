@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { Registro } from './registro/registro';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
   imports: [Registro],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('FrontendCoffeeNet');

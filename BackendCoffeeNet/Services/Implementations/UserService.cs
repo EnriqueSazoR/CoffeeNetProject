@@ -49,7 +49,7 @@ public class UserService : IUserService
         var success = await _userRepository.AddAsync(usuario);
 
         return success
-            ? new ServiceResult(true, "Usuario regustrado exitosamente.", usuario.Id_usuario.ToString())
+            ? new ServiceResult(true, "Usuario registrado exitosamente.", usuario.Id_usuario.ToString())
             : new ServiceResult(false, "Error al registrar el usuario. Intente nuevamente.");
     }
     
